@@ -15,7 +15,7 @@ app <- Dash$new(external_stylesheets = "https://codepen.io/chriddyp/pen/bWLwgP.c
 url <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-pivot.csv?raw=true"
 pivoted_data <- read_csv(url)
 
-url_2 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/lab4_drug-description.csv.csv?raw=true"
+url_2 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/lab4_drug-description.csv?raw=true"
 drug_description <- read_csv(url_2)
 url_3 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-counts.csv?raw=true"
 combination_count <- read_csv(url_3) %>% 
