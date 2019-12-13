@@ -1,7 +1,6 @@
 library(tidyverse)
 library(viridis)
 library(plotly)
-library(gridExtra)
 # dash
 library(dashCoreComponents)
 library(dashHtmlComponents)
@@ -55,7 +54,7 @@ race <- top_race %>%
     geom_bar(aes(fill = Race), stat = "identity", show.legend = FALSE) + 
     scale_fill_viridis_d() + 
     labs(x = "Race", y = "count", title = paste("Top 3 Races with the most deaths in", drug))
-
+    
     return(race)
 }
 
@@ -93,8 +92,8 @@ if (drug == sym("Everything")){
     ggplot(aes(Age)) + 
     geom_density(alpha = 0.8, show.legend = FALSE, fill = "#21908C") + 
     scale_fill_viridis_d() + 
-    labs(x = "Age", y = "count", title = paste("Age distribution for the deaths in", drug)) 
-
+    labs(x = "Age", y = "count", title = paste("Age distribution for the deaths in", drug))
+    
     return(age)
 }
 
@@ -190,7 +189,7 @@ app$layout(
                         htmlDiv(list(
                             dccGraph(
                               id='vic-age_0',
-                              figure = ggplotly(set_graph_age(), width = 400, height = 300)
+                              figure = ggplotly(set_graph_age(), width = 500, height = 300)
                               )
                             ), style = list('display' = "table-row", "margin-bottom" = "1px") 
                           ),
@@ -198,7 +197,7 @@ app$layout(
                               htmlDiv(list(
                               dccGraph(
                                 id='vic-gender_0',
-                                figure = ggplotly(set_graph_gender(), width = 400, height = 300)
+                                figure = ggplotly(set_graph_gender(), width = 500, height = 300)
                                 )
                               ), style = list('display' = "block", 'float' = "left", 'margin-left' = "1px",
                               'margin-right' = "1px")
@@ -206,10 +205,10 @@ app$layout(
                               htmlDiv(list(
                               dccGraph(
                                 id='vic-race_0',
-                                figure = ggplotly(set_graph_race(), width = 400, height = 300)
+                                figure = ggplotly(set_graph_race(), width = 500, height = 300)
                                 )
                               ), style = list('display' = "block", 'float' = "left",  'margin-left' = "1px",
-                              'margin-right' = "1px")
+                              'margin-right' = "200px")
                               )          
                             ) , style = list('display' = "table-row", "margin-top" = "1px", 'float' = "left") 
                           ) 
@@ -242,7 +241,7 @@ app$layout(
    params=list(input(id = 'drugs_dd', property='value')),
 
    function(drug_input) {
-     result <- ggplotly(set_graph_race(drug = drug_input) ,width = 400, height = 300)
+     result <- ggplotly(set_graph_race(drug = drug_input) ,width = 500, height = 300)
 
      return(result)
    })
@@ -253,7 +252,7 @@ app$layout(
    params=list(input(id = 'drugs_dd', property='value')),
 
    function(drug_input) {
-     result <- ggplotly(set_graph_gender(drug = drug_input) ,width = 400, height = 300)
+     result <- ggplotly(set_graph_gender(drug = drug_input) ,width = 500, height = 300)
 
      return(result)
    })
@@ -264,7 +263,7 @@ app$layout(
    params=list(input(id = 'drugs_dd', property='value')),
 
    function(drug_input) {
-     result <- ggplotly(set_graph_age(drug = drug_input) ,width = 400, height = 300)
+     result <- ggplotly(set_graph_age(drug = drug_input) ,width = 500, height = 300)
 
      return(result)
    })
