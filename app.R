@@ -13,10 +13,12 @@ app <- Dash$new(external_stylesheets = "https://codepen.io/chriddyp/pen/bWLwgP.c
 # load dataset
 url <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-pivot.csv?raw=true"
 pivoted_data <- read_csv(url)
-
+url_1 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-melted.csv?raw=true"
+drug_overdose_wrangled_m = read_csv(url_1) 
 url_2 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/lab4_drug-description.csv?raw=true"
 drug_description <- read_csv(url_2)
 url_3 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-counts.csv?raw=true"
+
 combination_count <- read_csv(url_3) %>% 
   rename(second_drug =  `Second drug`) %>%
   mutate(index = factor(index),
@@ -128,8 +130,6 @@ drugs_heatmap <- combination_count %>% ggplot(aes(index, second_drug)) +
     axis.text = element_text(angle = 45)
   )
 
-
-drug_overdose_wrangled_m = read_csv("data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-melted.csv") 
 df <- drug_overdose_wrangled_m %>%   
   group_by(Drug) %>%
   summarize(times_tested_positive = sum(Toxicity_test, na.rm = TRUE))%>%
