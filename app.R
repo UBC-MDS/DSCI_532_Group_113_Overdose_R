@@ -115,6 +115,23 @@ drugs_heatmap <- combination_count %>% ggplot(aes(index, second_drug)) +
     axis.text = element_text(angle = 45)
   )
 
+
+drug_overdose_wrangled_m = read_csv("data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-melted.csv") 
+df <- drug_overdose_wrangled_m %>%   
+  group_by(Drug) %>%
+  summarize(times_tested_positive = sum(Toxicity_test, na.rm = TRUE))%>%
+  arrange(desc(times_tested_positive))
+
+h_bar_plot <- df  %>% ggplot(aes(x=reorder(Drug, times_tested_positive), y=times_tested_positive)) +
+  geom_bar(stat='identity',fill="cyan4") +
+  coord_flip()+
+  labs(title = "Ranking of drugs by the times tested positive",x ="Drug ", y = "Times a drug tested positive")+
+  theme_minimal()+
+  theme(plot.title = element_text(hjust = 0.5),text = element_text(size=10))
+  
+
+
+
 app <- Dash$new(external_stylesheets = list("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css",
                                             "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
                                             "https://codepen.io/bcd/pen/KQrXdb.css", 
@@ -173,13 +190,10 @@ app$layout(
                 htmlA(
                   id = "gh-link",
                   children = list(paste0(
-                    "How ",
-                    "drug overdose",
-                    "is stealing lives from ",
-                    "us! "
+                    "How drug overdose is stealing lives from us!"
                   )), 
                   href = "https://github.com/dataubc/DSCI_532_Group_113_Overdose_R",
-                  style = list(color = "white",'margin-left' = "10px"),
+                  style = list(color = "white",'margin-left' = "10px","font-size" = "20px"),
                   
                   htmlImg(
                     src = "assets/git.png"
@@ -194,22 +208,20 @@ app$layout(
             
             htmlDiv(
               style = list('margin-left' = "10px"),
-              children = list(htmlBr(),
-                              htmlH5(paste0(
-                                
+              children = list(htmlH5(paste0(
                                 "Overdose app allows you to visualize ",
                                 "different factors associated with ",
-                                "accidental death by overdose."
+                                "accidental death by overdose"
                               )
                               ))),
             
             htmlDiv(style = list('margin-left' = "10px"),
                     children = list(
-                      htmlH5(paste0(
-                        "    You ",
+                      htmlH5(style = list(color = "grey",'margin-left' = "10px","font-size" = "20px"),paste0(
+                        "You ",
                         "can interactively explore this issue ",
                         "using (The Killers tab) or ",
-                        "the  (The Victims tab)."
+                        "the  (The Victims tab)"
                       )
                       ))),
             
@@ -218,16 +230,19 @@ app$layout(
                 dccTabs(id="tabs", children = list(
                   dccTab(label = 'The Killer', children =list(
                     htmlDiv(list(
-                      htmlP("Here goes the other graph")
-                    ), style = list('display' = "block", 'float' = "left", 'margin-left' = "10px",
-                                    'margin-right' = "1px", 'width' = "10px", "font-size" = "15px") ),
+                      dccGraph(
+                        id='vic-heatmap-1',
+                        figure = ggplotly(h_bar_plot ,width = 550, height = 600)
+                      )
+                    ), style = list('display' = "block", 'float' = "left", 'margin-left' = "200px",
+                                    'margin-right' = "1px", 'width' = "500px", "font-size" = "15px") ),
                     htmlDiv(list(
                       dccGraph(
                         id='vic-heatmap-0',
-                        figure = ggplotly(drugs_heatmap, width = 800, height = 600)
+                        figure = ggplotly(drugs_heatmap, width = 650, height = 600)
                       )
                     ), style = list('display' = "block", 'float' = "right", 'margin-left' = "10px",
-                                    'margin-right' = "500px", 'width' = "500px", "font-size" = "15px") )
+                                    'margin-right' = "400px", 'width' = "500px", "font-size" = "15px") )
                   )
                   ),
                   dccTab(label = 'The Victims', children = list(
@@ -345,5 +360,3 @@ app$callback(
 
 
 app$run_server(host = "0.0.0.0", port = Sys.getenv('PORT', 8050))
-
-
