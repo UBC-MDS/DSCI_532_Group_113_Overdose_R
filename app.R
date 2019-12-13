@@ -12,8 +12,25 @@ library(readxl)
 app <- Dash$new(external_stylesheets = "https://codepen.io/chriddyp/pen/bWLwgP.css")
 
 # load dataset
-pivoted_data <- read_csv("data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-pivot.csv")
+url <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-pivot.csv?raw=true"
+pivoted_data <- read_csv(url)
+
 drug_description <- readxl::read_excel("data/lab4_drug-description.xlsx")
+url_3 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-counts.csv?raw=true"
+combination_count <- read_csv(url_3) %>% 
+                        rename(second_drug =  `Second drug`) %>%
+                        mutate(index = factor(index),
+                               second_drug = factor(second_drug))
+
+combination_count$index <- combination_count$index %>% 
+                                fct_relevel('Heroin', 'Fentanyl', 'Cocaine', 'Benzodiazepine', 'Ethanol', 'Oxycodone',
+                                 'Methadone', 'Other', 'Fentanyl Analogue', 'Amphet', 'Tramad', 'Hydrocodone',
+                                  'Oxymorphone','OpiateNOS', 'Morphine', 'Hydromorphone')
+                         
+
+combination_count$second_drug <- combination_count$second_drug %>% 
+                                 fct_relevel('Hydromorphone','Morphine','OpiateNOS','Oxymorphone','Hydrocodone','Tramad','Amphet','Fentanyl Analogue',
+                                           'Other','Methadone','Oxycodone', 'Ethanol', 'Benzodiazepine',  'Cocaine','Fentanyl', 'Heroin')
 
 drug_name <- "Heroin"
 
@@ -80,6 +97,15 @@ if (drug == sym("Everything")){
     return(age)
 }
 
+drugs_heatmap <- combination_count %>% ggplot(aes(index, second_drug)) +
+                                          geom_tile(aes(fill = Count)) +
+                                          geom_text(aes(label = round(Count, 1)), color = 'white') +
+                                          labs(x = "Second drug", y = "First drug")+
+                                          scale_fill_viridis() +
+                                          theme_minimal() +
+                                          theme(
+                                              axis.text = element_text(angle = 45)
+                                          )
 
 app <- Dash$new(external_stylesheets = list("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css",
                                             "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
@@ -126,7 +152,20 @@ app$layout(
       htmlDiv(
         list(
            dccTabs(id="tabs", children = list(
-                dccTab(label = 'The Killer'),
+                dccTab(label = 'The Killer', children =list(
+                  htmlDiv(list(
+                   htmlP("Here goes the other graph")
+                  ), style = list('display' = "block", 'float' = "left", 'margin-left' = "10px",
+                              'margin-right' = "1px", 'width' = "10px", "font-size" = "15px") ),
+                    htmlDiv(list(
+                   dccGraph(
+                              id='vic-heatmap-0',
+                              figure = ggplotly(drugs_heatmap, width = 800, height = 600)
+                              )
+                  ), style = list('display' = "block", 'float' = "right", 'margin-left' = "10px",
+                              'margin-right' = "500px", 'width' = "500px", "font-size" = "15px") )
+                  )
+                ),
                 dccTab(label = 'The Victims', children = list(
                     htmlDiv(list(
                         DrugsDD,
@@ -239,7 +278,7 @@ app$layout(
      return(result)
    })
 
-app$run_server(showcase = TRUE)
+app$run_server(host = "0.0.0.0", port = Sys.getenv('PORT', 8050))
 
 
            
