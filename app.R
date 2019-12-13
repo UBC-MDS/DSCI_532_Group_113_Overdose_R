@@ -120,22 +120,24 @@ set_graph_age <- function(drug = drug_name){
   return(age)
 }
 
-drugs_heatmap <- combination_count %>% ggplot(aes(index, second_drug)) +
+drugs_heatmap <- combination_count %>% 
+ggplot(aes(index, second_drug, text = paste('First Drug:', index, '<br>Second Drug: ', second_drug))) +
   geom_tile(aes(fill = Count)) +
   geom_text(aes(label = round(Count, 1)), color = 'white', size = 3) +
-  labs(x = "Second drug", y = "First drug")+
+  labs(x = "First drug", y = "Second drug") +
   scale_fill_viridis() +
   theme_minimal() +
   theme(
     axis.text = element_text(angle = 45)
   )
+drugs_heatmap <- ggplotly(drugs_heatmap, width = 650, height = 600, tooltip = "text")
 
 df <- drug_overdose_wrangled_m %>%   
   group_by(Drug) %>%
   summarize(times_tested_positive = sum(Toxicity_test, na.rm = TRUE))%>%
   arrange(desc(times_tested_positive))
 
-h_bar_plot <- df  %>% ggplot(aes(x=reorder(Drug, times_tested_positive), y=times_tested_positive)) +
+h_bar_plot <- df %>% ggplot(aes(x=reorder(Drug, times_tested_positive), y=times_tested_positive)) +
   geom_bar(stat='identity',fill="cyan4") +
   coord_flip()+
   labs(title = "Ranking of drugs by the times tested positive",x ="Drug ", y = "Times a drug tested positive")+
@@ -244,15 +246,15 @@ app$layout(
                   dccTab(label = 'The Killer', children =list(
                     htmlDiv(list(
                       dccGraph(
-                        id='vic-heatmap-1',
-                        figure = ggplotly(h_bar_plot ,width = 550, height = 600)
+                        id='vic-drugs',
+                        figure = ggplotly(h_bar_plot, width = 550, height = 600)
                       )
                     ), style = list('display' = "block", 'float' = "left", 'margin-left' = "10px",
                                     'margin-right' = "1px", 'width' = "500px", "font-size" = "15px", "margin-bottom" = "3px") ),
                     htmlDiv(list(
                       dccGraph(
                         id='vic-heatmap-0',
-                        figure = ggplotly(drugs_heatmap, width = 650, height = 600)
+                        figure = drugs_heatmap
                       )
                     ), style = list('display' = "block", 'float' = "right", 'margin-left' = "10px",
                                     'margin-right' = "10px", 'width' = "650px", "font-size" = "15px", "margin-bottom" = "3px") )
