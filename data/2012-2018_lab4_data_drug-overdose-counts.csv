@@ -1,257 +1,257 @@
-,index,Second drug,Count
-0,Amphet,Heroin,77.0
-1,Benzodiazepine,Heroin,547.0
-2,Cocaine,Heroin,749.0
-3,Ethanol,Heroin,587.0
-4,Fentanyl,Heroin,1060.0
-5,Fentanyl Analogue,Heroin,186.0
+X1,index,Second drug,Count
+0,Amphet,Heroin,77
+1,Benzodiazepine,Heroin,547
+2,Cocaine,Heroin,749
+3,Ethanol,Heroin,587
+4,Fentanyl,Heroin,1060
+5,Fentanyl Analogue,Heroin,186
 6,Heroin,Heroin,
-7,Hydrocodone,Heroin,25.0
-8,Hydromorphone,Heroin,12.0
-9,Methadone,Heroin,142.0
-10,Morphine,Heroin,1.0
-11,OpiateNOS,Heroin,0.0
-12,Other,Heroin,119.0
-13,Oxycodone,Heroin,115.0
-14,Oxymorphone,Heroin,12.0
-15,Tramad,Heroin,49.0
-16,Amphet,Cocaine,49.0
-17,Benzodiazepine,Cocaine,269.0
+7,Hydrocodone,Heroin,25
+8,Hydromorphone,Heroin,12
+9,Methadone,Heroin,142
+10,Morphine,Heroin,1
+11,OpiateNOS,Heroin,0
+12,Other,Heroin,119
+13,Oxycodone,Heroin,115
+14,Oxymorphone,Heroin,12
+15,Tramad,Heroin,49
+16,Amphet,Cocaine,49
+17,Benzodiazepine,Cocaine,269
 18,Cocaine,Cocaine,
-19,Ethanol,Cocaine,327.0
-20,Fentanyl,Cocaine,704.0
-21,Fentanyl Analogue,Cocaine,140.0
-22,Heroin,Cocaine,749.0
-23,Hydrocodone,Cocaine,14.0
-24,Hydromorphone,Cocaine,4.0
-25,Methadone,Cocaine,99.0
-26,Morphine,Cocaine,3.0
-27,OpiateNOS,Cocaine,8.0
-28,Other,Cocaine,93.0
-29,Oxycodone,Cocaine,92.0
-30,Oxymorphone,Cocaine,11.0
-31,Tramad,Cocaine,24.0
-32,Amphet,Fentanyl,80.0
-33,Benzodiazepine,Fentanyl,532.0
-34,Cocaine,Fentanyl,704.0
-35,Ethanol,Fentanyl,540.0
+19,Ethanol,Cocaine,327
+20,Fentanyl,Cocaine,704
+21,Fentanyl Analogue,Cocaine,140
+22,Heroin,Cocaine,749
+23,Hydrocodone,Cocaine,14
+24,Hydromorphone,Cocaine,4
+25,Methadone,Cocaine,99
+26,Morphine,Cocaine,3
+27,OpiateNOS,Cocaine,8
+28,Other,Cocaine,93
+29,Oxycodone,Cocaine,92
+30,Oxymorphone,Cocaine,11
+31,Tramad,Cocaine,24
+32,Amphet,Fentanyl,80
+33,Benzodiazepine,Fentanyl,532
+34,Cocaine,Fentanyl,704
+35,Ethanol,Fentanyl,540
 36,Fentanyl,Fentanyl,
-37,Fentanyl Analogue,Fentanyl,388.0
-38,Heroin,Fentanyl,1060.0
-39,Hydrocodone,Fentanyl,20.0
-40,Hydromorphone,Fentanyl,9.0
-41,Methadone,Fentanyl,123.0
-42,Morphine,Fentanyl,5.0
-43,OpiateNOS,Fentanyl,15.0
-44,Other,Fentanyl,130.0
-45,Oxycodone,Fentanyl,129.0
-46,Oxymorphone,Fentanyl,15.0
-47,Tramad,Fentanyl,49.0
-48,Amphet,Fentanyl Analogue,18.0
-49,Benzodiazepine,Fentanyl Analogue,107.0
-50,Cocaine,Fentanyl Analogue,140.0
-51,Ethanol,Fentanyl Analogue,99.0
-52,Fentanyl,Fentanyl Analogue,388.0
+37,Fentanyl Analogue,Fentanyl,388
+38,Heroin,Fentanyl,1060
+39,Hydrocodone,Fentanyl,20
+40,Hydromorphone,Fentanyl,9
+41,Methadone,Fentanyl,123
+42,Morphine,Fentanyl,5
+43,OpiateNOS,Fentanyl,15
+44,Other,Fentanyl,130
+45,Oxycodone,Fentanyl,129
+46,Oxymorphone,Fentanyl,15
+47,Tramad,Fentanyl,49
+48,Amphet,Fentanyl Analogue,18
+49,Benzodiazepine,Fentanyl Analogue,107
+50,Cocaine,Fentanyl Analogue,140
+51,Ethanol,Fentanyl Analogue,99
+52,Fentanyl,Fentanyl Analogue,388
 53,Fentanyl Analogue,Fentanyl Analogue,
-54,Heroin,Fentanyl Analogue,186.0
-55,Hydrocodone,Fentanyl Analogue,4.0
-56,Hydromorphone,Fentanyl Analogue,1.0
-57,Methadone,Fentanyl Analogue,25.0
-58,Morphine,Fentanyl Analogue,0.0
-59,OpiateNOS,Fentanyl Analogue,0.0
-60,Other,Fentanyl Analogue,39.0
-61,Oxycodone,Fentanyl Analogue,23.0
-62,Oxymorphone,Fentanyl Analogue,1.0
-63,Tramad,Fentanyl Analogue,11.0
-64,Amphet,Oxycodone,17.0
-65,Benzodiazepine,Oxycodone,257.0
-66,Cocaine,Oxycodone,92.0
-67,Ethanol,Oxycodone,152.0
-68,Fentanyl,Oxycodone,129.0
-69,Fentanyl Analogue,Oxycodone,23.0
-70,Heroin,Oxycodone,115.0
-71,Hydrocodone,Oxycodone,25.0
-72,Hydromorphone,Oxycodone,7.0
-73,Methadone,Oxycodone,36.0
-74,Morphine,Oxycodone,16.0
-75,OpiateNOS,Oxycodone,16.0
-76,Other,Oxycodone,57.0
+54,Heroin,Fentanyl Analogue,186
+55,Hydrocodone,Fentanyl Analogue,4
+56,Hydromorphone,Fentanyl Analogue,1
+57,Methadone,Fentanyl Analogue,25
+58,Morphine,Fentanyl Analogue,0
+59,OpiateNOS,Fentanyl Analogue,0
+60,Other,Fentanyl Analogue,39
+61,Oxycodone,Fentanyl Analogue,23
+62,Oxymorphone,Fentanyl Analogue,1
+63,Tramad,Fentanyl Analogue,11
+64,Amphet,Oxycodone,17
+65,Benzodiazepine,Oxycodone,257
+66,Cocaine,Oxycodone,92
+67,Ethanol,Oxycodone,152
+68,Fentanyl,Oxycodone,129
+69,Fentanyl Analogue,Oxycodone,23
+70,Heroin,Oxycodone,115
+71,Hydrocodone,Oxycodone,25
+72,Hydromorphone,Oxycodone,7
+73,Methadone,Oxycodone,36
+74,Morphine,Oxycodone,16
+75,OpiateNOS,Oxycodone,16
+76,Other,Oxycodone,57
 77,Oxycodone,Oxycodone,
-78,Oxymorphone,Oxycodone,89.0
-79,Tramad,Oxycodone,17.0
-80,Amphet,Oxymorphone,4.0
-81,Benzodiazepine,Oxymorphone,50.0
-82,Cocaine,Oxymorphone,11.0
-83,Ethanol,Oxymorphone,27.0
-84,Fentanyl,Oxymorphone,15.0
-85,Fentanyl Analogue,Oxymorphone,1.0
-86,Heroin,Oxymorphone,12.0
-87,Hydrocodone,Oxymorphone,2.0
-88,Hydromorphone,Oxymorphone,1.0
-89,Methadone,Oxymorphone,9.0
-90,Morphine,Oxymorphone,1.0
-91,OpiateNOS,Oxymorphone,1.0
-92,Other,Oxymorphone,5.0
-93,Oxycodone,Oxymorphone,89.0
+78,Oxymorphone,Oxycodone,89
+79,Tramad,Oxycodone,17
+80,Amphet,Oxymorphone,4
+81,Benzodiazepine,Oxymorphone,50
+82,Cocaine,Oxymorphone,11
+83,Ethanol,Oxymorphone,27
+84,Fentanyl,Oxymorphone,15
+85,Fentanyl Analogue,Oxymorphone,1
+86,Heroin,Oxymorphone,12
+87,Hydrocodone,Oxymorphone,2
+88,Hydromorphone,Oxymorphone,1
+89,Methadone,Oxymorphone,9
+90,Morphine,Oxymorphone,1
+91,OpiateNOS,Oxymorphone,1
+92,Other,Oxymorphone,5
+93,Oxycodone,Oxymorphone,89
 94,Oxymorphone,Oxymorphone,
-95,Tramad,Oxymorphone,2.0
-96,Amphet,Ethanol,27.0
-97,Benzodiazepine,Ethanol,322.0
-98,Cocaine,Ethanol,327.0
+95,Tramad,Oxymorphone,2
+96,Amphet,Ethanol,27
+97,Benzodiazepine,Ethanol,322
+98,Cocaine,Ethanol,327
 99,Ethanol,Ethanol,
-100,Fentanyl,Ethanol,540.0
-101,Fentanyl Analogue,Ethanol,99.0
-102,Heroin,Ethanol,587.0
-103,Hydrocodone,Ethanol,39.0
-104,Hydromorphone,Ethanol,2.0
-105,Methadone,Ethanol,92.0
-106,Morphine,Ethanol,8.0
-107,OpiateNOS,Ethanol,18.0
-108,Other,Ethanol,71.0
-109,Oxycodone,Ethanol,152.0
-110,Oxymorphone,Ethanol,27.0
-111,Tramad,Ethanol,33.0
-112,Amphet,Hydrocodone,2.0
-113,Benzodiazepine,Hydrocodone,41.0
-114,Cocaine,Hydrocodone,14.0
-115,Ethanol,Hydrocodone,39.0
-116,Fentanyl,Hydrocodone,20.0
-117,Fentanyl Analogue,Hydrocodone,4.0
-118,Heroin,Hydrocodone,25.0
+100,Fentanyl,Ethanol,540
+101,Fentanyl Analogue,Ethanol,99
+102,Heroin,Ethanol,587
+103,Hydrocodone,Ethanol,39
+104,Hydromorphone,Ethanol,2
+105,Methadone,Ethanol,92
+106,Morphine,Ethanol,8
+107,OpiateNOS,Ethanol,18
+108,Other,Ethanol,71
+109,Oxycodone,Ethanol,152
+110,Oxymorphone,Ethanol,27
+111,Tramad,Ethanol,33
+112,Amphet,Hydrocodone,2
+113,Benzodiazepine,Hydrocodone,41
+114,Cocaine,Hydrocodone,14
+115,Ethanol,Hydrocodone,39
+116,Fentanyl,Hydrocodone,20
+117,Fentanyl Analogue,Hydrocodone,4
+118,Heroin,Hydrocodone,25
 119,Hydrocodone,Hydrocodone,
-120,Hydromorphone,Hydrocodone,1.0
-121,Methadone,Hydrocodone,4.0
-122,Morphine,Hydrocodone,1.0
-123,OpiateNOS,Hydrocodone,3.0
-124,Other,Hydrocodone,9.0
-125,Oxycodone,Hydrocodone,25.0
-126,Oxymorphone,Hydrocodone,2.0
-127,Tramad,Hydrocodone,3.0
-128,Amphet,Benzodiazepine,64.0
+120,Hydromorphone,Hydrocodone,1
+121,Methadone,Hydrocodone,4
+122,Morphine,Hydrocodone,1
+123,OpiateNOS,Hydrocodone,3
+124,Other,Hydrocodone,9
+125,Oxycodone,Hydrocodone,25
+126,Oxymorphone,Hydrocodone,2
+127,Tramad,Hydrocodone,3
+128,Amphet,Benzodiazepine,64
 129,Benzodiazepine,Benzodiazepine,
-130,Cocaine,Benzodiazepine,269.0
-131,Ethanol,Benzodiazepine,322.0
-132,Fentanyl,Benzodiazepine,532.0
-133,Fentanyl Analogue,Benzodiazepine,107.0
-134,Heroin,Benzodiazepine,547.0
-135,Hydrocodone,Benzodiazepine,41.0
-136,Hydromorphone,Benzodiazepine,11.0
-137,Methadone,Benzodiazepine,197.0
-138,Morphine,Benzodiazepine,25.0
-139,OpiateNOS,Benzodiazepine,32.0
-140,Other,Benzodiazepine,146.0
-141,Oxycodone,Benzodiazepine,257.0
-142,Oxymorphone,Benzodiazepine,50.0
-143,Tramad,Benzodiazepine,48.0
-144,Amphet,Methadone,11.0
-145,Benzodiazepine,Methadone,197.0
-146,Cocaine,Methadone,99.0
-147,Ethanol,Methadone,92.0
-148,Fentanyl,Methadone,123.0
-149,Fentanyl Analogue,Methadone,25.0
-150,Heroin,Methadone,142.0
-151,Hydrocodone,Methadone,4.0
-152,Hydromorphone,Methadone,2.0
+130,Cocaine,Benzodiazepine,269
+131,Ethanol,Benzodiazepine,322
+132,Fentanyl,Benzodiazepine,532
+133,Fentanyl Analogue,Benzodiazepine,107
+134,Heroin,Benzodiazepine,547
+135,Hydrocodone,Benzodiazepine,41
+136,Hydromorphone,Benzodiazepine,11
+137,Methadone,Benzodiazepine,197
+138,Morphine,Benzodiazepine,25
+139,OpiateNOS,Benzodiazepine,32
+140,Other,Benzodiazepine,146
+141,Oxycodone,Benzodiazepine,257
+142,Oxymorphone,Benzodiazepine,50
+143,Tramad,Benzodiazepine,48
+144,Amphet,Methadone,11
+145,Benzodiazepine,Methadone,197
+146,Cocaine,Methadone,99
+147,Ethanol,Methadone,92
+148,Fentanyl,Methadone,123
+149,Fentanyl Analogue,Methadone,25
+150,Heroin,Methadone,142
+151,Hydrocodone,Methadone,4
+152,Hydromorphone,Methadone,2
 153,Methadone,Methadone,
-154,Morphine,Methadone,3.0
-155,OpiateNOS,Methadone,5.0
-156,Other,Methadone,31.0
-157,Oxycodone,Methadone,36.0
-158,Oxymorphone,Methadone,9.0
-159,Tramad,Methadone,11.0
+154,Morphine,Methadone,3
+155,OpiateNOS,Methadone,5
+156,Other,Methadone,31
+157,Oxycodone,Methadone,36
+158,Oxymorphone,Methadone,9
+159,Tramad,Methadone,11
 160,Amphet,Amphet,
-161,Benzodiazepine,Amphet,64.0
-162,Cocaine,Amphet,49.0
-163,Ethanol,Amphet,27.0
-164,Fentanyl,Amphet,80.0
-165,Fentanyl Analogue,Amphet,18.0
-166,Heroin,Amphet,77.0
-167,Hydrocodone,Amphet,2.0
-168,Hydromorphone,Amphet,1.0
-169,Methadone,Amphet,11.0
-170,Morphine,Amphet,1.0
-171,OpiateNOS,Amphet,4.0
-172,Other,Amphet,31.0
-173,Oxycodone,Amphet,17.0
-174,Oxymorphone,Amphet,4.0
-175,Tramad,Amphet,4.0
-176,Amphet,Tramad,4.0
-177,Benzodiazepine,Tramad,48.0
-178,Cocaine,Tramad,24.0
-179,Ethanol,Tramad,33.0
-180,Fentanyl,Tramad,49.0
-181,Fentanyl Analogue,Tramad,11.0
-182,Heroin,Tramad,49.0
-183,Hydrocodone,Tramad,3.0
-184,Hydromorphone,Tramad,1.0
-185,Methadone,Tramad,11.0
-186,Morphine,Tramad,1.0
-187,OpiateNOS,Tramad,4.0
-188,Other,Tramad,11.0
-189,Oxycodone,Tramad,17.0
-190,Oxymorphone,Tramad,2.0
+161,Benzodiazepine,Amphet,64
+162,Cocaine,Amphet,49
+163,Ethanol,Amphet,27
+164,Fentanyl,Amphet,80
+165,Fentanyl Analogue,Amphet,18
+166,Heroin,Amphet,77
+167,Hydrocodone,Amphet,2
+168,Hydromorphone,Amphet,1
+169,Methadone,Amphet,11
+170,Morphine,Amphet,1
+171,OpiateNOS,Amphet,4
+172,Other,Amphet,31
+173,Oxycodone,Amphet,17
+174,Oxymorphone,Amphet,4
+175,Tramad,Amphet,4
+176,Amphet,Tramad,4
+177,Benzodiazepine,Tramad,48
+178,Cocaine,Tramad,24
+179,Ethanol,Tramad,33
+180,Fentanyl,Tramad,49
+181,Fentanyl Analogue,Tramad,11
+182,Heroin,Tramad,49
+183,Hydrocodone,Tramad,3
+184,Hydromorphone,Tramad,1
+185,Methadone,Tramad,11
+186,Morphine,Tramad,1
+187,OpiateNOS,Tramad,4
+188,Other,Tramad,11
+189,Oxycodone,Tramad,17
+190,Oxymorphone,Tramad,2
 191,Tramad,Tramad,
-192,Amphet,Morphine,1.0
-193,Benzodiazepine,Morphine,25.0
-194,Cocaine,Morphine,3.0
-195,Ethanol,Morphine,8.0
-196,Fentanyl,Morphine,5.0
-197,Fentanyl Analogue,Morphine,0.0
-198,Heroin,Morphine,1.0
-199,Hydrocodone,Morphine,1.0
-200,Hydromorphone,Morphine,4.0
-201,Methadone,Morphine,3.0
+192,Amphet,Morphine,1
+193,Benzodiazepine,Morphine,25
+194,Cocaine,Morphine,3
+195,Ethanol,Morphine,8
+196,Fentanyl,Morphine,5
+197,Fentanyl Analogue,Morphine,0
+198,Heroin,Morphine,1
+199,Hydrocodone,Morphine,1
+200,Hydromorphone,Morphine,4
+201,Methadone,Morphine,3
 202,Morphine,Morphine,
-203,OpiateNOS,Morphine,13.0
-204,Other,Morphine,22.0
-205,Oxycodone,Morphine,16.0
-206,Oxymorphone,Morphine,1.0
-207,Tramad,Morphine,1.0
-208,Amphet,Hydromorphone,1.0
-209,Benzodiazepine,Hydromorphone,11.0
-210,Cocaine,Hydromorphone,4.0
-211,Ethanol,Hydromorphone,2.0
-212,Fentanyl,Hydromorphone,9.0
-213,Fentanyl Analogue,Hydromorphone,1.0
-214,Heroin,Hydromorphone,12.0
-215,Hydrocodone,Hydromorphone,1.0
+203,OpiateNOS,Morphine,13
+204,Other,Morphine,22
+205,Oxycodone,Morphine,16
+206,Oxymorphone,Morphine,1
+207,Tramad,Morphine,1
+208,Amphet,Hydromorphone,1
+209,Benzodiazepine,Hydromorphone,11
+210,Cocaine,Hydromorphone,4
+211,Ethanol,Hydromorphone,2
+212,Fentanyl,Hydromorphone,9
+213,Fentanyl Analogue,Hydromorphone,1
+214,Heroin,Hydromorphone,12
+215,Hydrocodone,Hydromorphone,1
 216,Hydromorphone,Hydromorphone,
-217,Methadone,Hydromorphone,2.0
-218,Morphine,Hydromorphone,4.0
-219,OpiateNOS,Hydromorphone,0.0
-220,Other,Hydromorphone,4.0
-221,Oxycodone,Hydromorphone,7.0
-222,Oxymorphone,Hydromorphone,1.0
-223,Tramad,Hydromorphone,1.0
-224,Amphet,Other,31.0
-225,Benzodiazepine,Other,146.0
-226,Cocaine,Other,93.0
-227,Ethanol,Other,71.0
-228,Fentanyl,Other,130.0
-229,Fentanyl Analogue,Other,39.0
-230,Heroin,Other,119.0
-231,Hydrocodone,Other,9.0
-232,Hydromorphone,Other,4.0
-233,Methadone,Other,31.0
-234,Morphine,Other,22.0
-235,OpiateNOS,Other,31.0
+217,Methadone,Hydromorphone,2
+218,Morphine,Hydromorphone,4
+219,OpiateNOS,Hydromorphone,0
+220,Other,Hydromorphone,4
+221,Oxycodone,Hydromorphone,7
+222,Oxymorphone,Hydromorphone,1
+223,Tramad,Hydromorphone,1
+224,Amphet,Other,31
+225,Benzodiazepine,Other,146
+226,Cocaine,Other,93
+227,Ethanol,Other,71
+228,Fentanyl,Other,130
+229,Fentanyl Analogue,Other,39
+230,Heroin,Other,119
+231,Hydrocodone,Other,9
+232,Hydromorphone,Other,4
+233,Methadone,Other,31
+234,Morphine,Other,22
+235,OpiateNOS,Other,31
 236,Other,Other,
-237,Oxycodone,Other,57.0
-238,Oxymorphone,Other,5.0
-239,Tramad,Other,11.0
-240,Amphet,OpiateNOS,4.0
-241,Benzodiazepine,OpiateNOS,32.0
-242,Cocaine,OpiateNOS,8.0
-243,Ethanol,OpiateNOS,18.0
-244,Fentanyl,OpiateNOS,15.0
-245,Fentanyl Analogue,OpiateNOS,0.0
-246,Heroin,OpiateNOS,0.0
-247,Hydrocodone,OpiateNOS,3.0
-248,Hydromorphone,OpiateNOS,0.0
-249,Methadone,OpiateNOS,5.0
-250,Morphine,OpiateNOS,13.0
+237,Oxycodone,Other,57
+238,Oxymorphone,Other,5
+239,Tramad,Other,11
+240,Amphet,OpiateNOS,4
+241,Benzodiazepine,OpiateNOS,32
+242,Cocaine,OpiateNOS,8
+243,Ethanol,OpiateNOS,18
+244,Fentanyl,OpiateNOS,15
+245,Fentanyl Analogue,OpiateNOS,0
+246,Heroin,OpiateNOS,0
+247,Hydrocodone,OpiateNOS,3
+248,Hydromorphone,OpiateNOS,0
+249,Methadone,OpiateNOS,5
+250,Morphine,OpiateNOS,13
 251,OpiateNOS,OpiateNOS,
-252,Other,OpiateNOS,31.0
-253,Oxycodone,OpiateNOS,16.0
-254,Oxymorphone,OpiateNOS,1.0
-255,Tramad,OpiateNOS,4.0
+252,Other,OpiateNOS,31
+253,Oxycodone,OpiateNOS,16
+254,Oxymorphone,OpiateNOS,1
+255,Tramad,OpiateNOS,4
