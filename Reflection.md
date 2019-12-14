@@ -1,12 +1,17 @@
-# Feedback
-During the implementation of the R app, we took into account the feedback given during the previous implementations and the feedback given during peer review activities. The first change done was removing the trend line plot, because it added confusion to the users. Then we added tabs so that the users can move from one section to another in a smoother way. Descriptions were added to every plot to help users understand the usage of each plot. The color was set to be color blind friendly. In addition, in order to correct the lack of data in smaller demographic groups, we selected the top three more frequent groups to be displayed on the graphs. Finally, links to the source of the data and the drug information wesite were added.  
+# Reflection
 
-# Limitations
+## Visualization Interactivity 
 
-## Data
+Overdash is a visualization app that is designed to provide insights into the rising deaths by accidental overdose in Connecticut from 2012 to 2019. It assists health professional, law enforcement professionals and policymaker by providing a visual representation of this crisis. This is the R version of the app. 
 
-Regarding data, we think it can be expanded to wider populations so that we can see information on more demographic groups other than Connecticut.
+During the implementation of the R app, we took into account the feedback given from UBC-MDS teaching team and feedback received during DSCI 532 peer review session and we made changes accordingly. The changes have enhanced visualization interactivity of the app in many ways. First, the trend line plot was removed as it caused confusion  to some users. Instead, we focused on enhancing the interactivity of other plots. For example, two tabs were designed so that the users can move from one section to another in a smoother way. Furthermore, descriptions were added to each plot to assist users to understand the usage of each plot. Also,the colours of all plots were set to be colour-blind friendly. To compensate for the lack of data in smaller demographic groups, we selected only the top three more frequent groups to be displayed on the graphs. Finally, links to the source of the data and the drug information website were added.  
 
-## Visualization
+## Limitations
 
-In terms of visualization, we believe the app can only show combinations of up to 2 drugs. The visualization cannot show when a victim took more than 3 drugs at the same times. Even though we selected the top 3 groups for visualization purposes, more interactivity can be added to the plots, so that the user is able to display a wider range if they want to.
+### Data
+
+The data used to generate this app was limited to one city in the US. We think the scope of the app can be expanded to wider populations to include more demographic groups other than Connecticut. In the future version of the app, we plan to allow the user to upload the data that require analysis.
+
+### Visualization
+
+One of the limitations of the app is that it shows only a combination of up to 2 drugs in the heatmap. Additional plot has to be included to display the effect of a combination of more than 3 drugs at the same times. For the effect of drugs by race,  I  the top 3 groups are selected for visualization purposes. More interactivity can be added to the plots by allowing the user to select the number of groups interactively. 
