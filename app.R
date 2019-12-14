@@ -13,10 +13,12 @@ app <- Dash$new(external_stylesheets = "https://codepen.io/chriddyp/pen/bWLwgP.c
 # load dataset
 url <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-pivot.csv?raw=true"
 pivoted_data <- read_csv(url)
-
+url_1 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-melted.csv?raw=true"
+drug_overdose_wrangled_m = read_csv(url_1) 
 url_2 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/lab4_drug-description.csv?raw=true"
 drug_description <- read_csv(url_2)
 url_3 <- "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R/blob/master/data/2012-2018_lab4_data_drug-overdose-counts.csv?raw=true"
+
 combination_count <- read_csv(url_3) %>% 
   rename(second_drug =  `Second drug`) %>%
   mutate(index = factor(index),
@@ -61,7 +63,12 @@ set_graph_race <- function(drug = drug_name){
     ggplot(aes(reorder(Race, -n), n)) + 
     geom_bar(aes(fill = Race), stat = "identity", show.legend = FALSE) + 
     scale_fill_viridis_d() + 
-    labs(x = "Race", y = "count", title = paste("Top 3 Races with the most deaths in", drug))
+    labs(x = "Race", y = "count", title = paste("Top 3 Races \nwith the most deaths in", drug)) + 
+    theme(
+      plot.title = element_text(size = 10),
+      axis.text = element_text(angle = 45),
+      axis.text.x=element_blank()
+    )
   
   return(race)
 }
@@ -79,10 +86,14 @@ set_graph_gender <- function(drug = drug_name){
   gender <- pivoted_data %>% 
     filter(Sex == "Male" | Sex == "Female") %>% 
     ggplot(aes(Sex, fill = Sex)) + 
-    geom_bar() + 
+    geom_bar(show.legend = FALSE) + 
     scale_fill_viridis_d() + 
-    labs(x = "", y = "Gender", title = paste("Gender distribution for the deaths in", drug))
-  
+    labs(x = "Gender", title = paste("Gender distribution \nfor the deaths in", drug)) + 
+    theme(
+      plot.title = element_text(size = 10),
+      axis.text = element_text(angle = 45),
+      axis.text.x=element_blank()
+    )
   return(gender)
 }
 
@@ -100,29 +111,33 @@ set_graph_age <- function(drug = drug_name){
     ggplot(aes(Age)) + 
     geom_density(alpha = 0.8, show.legend = FALSE, fill = "#21908C") + 
     scale_fill_viridis_d() + 
-    labs(x = "Age", y = "count", title = paste("Age distribution for the deaths in", drug))
+    labs(x = "Age", y = "count", title = paste("Age distribution \nfor the deaths in", drug)) + 
+    theme(
+      plot.title = element_text(size = 10),
+      axis.text = element_text(angle = 45)
+      )
   
   return(age)
 }
 
-drugs_heatmap <- combination_count %>% ggplot(aes(index, second_drug)) +
+drugs_heatmap <- combination_count %>% 
+ggplot(aes(index, second_drug, text = paste('First Drug:', index, '<br>Second Drug: ', second_drug))) +
   geom_tile(aes(fill = Count)) +
-  geom_text(aes(label = round(Count, 1)), color = 'white') +
-  labs(x = "Second drug", y = "First drug")+
+  geom_text(aes(label = round(Count, 1)), color = 'white', size = 3) +
+  labs(x = "First drug", y = "Second drug") +
   scale_fill_viridis() +
   theme_minimal() +
   theme(
     axis.text = element_text(angle = 45)
   )
+drugs_heatmap <- ggplotly(drugs_heatmap, width = 650, height = 600, tooltip = "text")
 
-
-drug_overdose_wrangled_m = read_csv("data/2012-2018_lab4_data_drug-overdose-deaths-connecticut-wrangled-melted.csv") 
 df <- drug_overdose_wrangled_m %>%   
   group_by(Drug) %>%
   summarize(times_tested_positive = sum(Toxicity_test, na.rm = TRUE))%>%
   arrange(desc(times_tested_positive))
 
-h_bar_plot <- df  %>% ggplot(aes(x=reorder(Drug, times_tested_positive), y=times_tested_positive)) +
+h_bar_plot <- df %>% ggplot(aes(x=reorder(Drug, times_tested_positive), y=times_tested_positive)) +
   geom_bar(stat='identity',fill="cyan4") +
   coord_flip()+
   labs(title = "Ranking of drugs by the times tested positive",x ="Drug ", y = "Times a drug tested positive")+
@@ -231,18 +246,18 @@ app$layout(
                   dccTab(label = 'The Killer', children =list(
                     htmlDiv(list(
                       dccGraph(
-                        id='vic-heatmap-1',
-                        figure = ggplotly(h_bar_plot ,width = 550, height = 600)
+                        id='vic-drugs',
+                        figure = ggplotly(h_bar_plot, width = 550, height = 600)
                       )
-                    ), style = list('display' = "block", 'float' = "left", 'margin-left' = "200px",
-                                    'margin-right' = "1px", 'width' = "500px", "font-size" = "15px") ),
+                    ), style = list('display' = "block", 'float' = "left", 'margin-left' = "10px",
+                                    'margin-right' = "1px", 'width' = "500px", "font-size" = "15px", "margin-bottom" = "3px") ),
                     htmlDiv(list(
                       dccGraph(
                         id='vic-heatmap-0',
-                        figure = ggplotly(drugs_heatmap, width = 650, height = 600)
+                        figure = drugs_heatmap
                       )
                     ), style = list('display' = "block", 'float' = "right", 'margin-left' = "10px",
-                                    'margin-right' = "400px", 'width' = "500px", "font-size" = "15px") )
+                                    'margin-right' = "10px", 'width' = "650px", "font-size" = "15px", "margin-bottom" = "3px") )
                   )
                   ),
                   dccTab(label = 'The Victims', children = list(
@@ -268,7 +283,7 @@ app$layout(
                         htmlDiv(list(
                           dccGraph(
                             id='vic-age_0',
-                            figure = ggplotly(set_graph_age(), width = 500, height = 300)
+                            figure = ggplotly(set_graph_age(), width = 400, height = 300)
                           )
                         ), style = list('display' = "table-row", "margin-bottom" = "1px") 
                         ),
@@ -276,7 +291,7 @@ app$layout(
                           htmlDiv(list(
                             dccGraph(
                               id='vic-gender_0',
-                              figure = ggplotly(set_graph_gender(), width = 500, height = 300)
+                              figure = ggplotly(set_graph_gender(), width = 400, height = 300)
                             )
                           ), style = list('display' = "block", 'float' = "left", 'margin-left' = "1px",
                                           'margin-right' = "1px")
@@ -284,10 +299,10 @@ app$layout(
                           htmlDiv(list(
                             dccGraph(
                               id='vic-race_0',
-                              figure = ggplotly(set_graph_race(), width = 500, height = 300)
+                              figure = ggplotly(set_graph_race(), width = 400, height = 300)
                             )
                           ), style = list('display' = "block", 'float' = "left",  'margin-left' = "1px",
-                                          'margin-right' = "200px")
+                                          'margin-right' = "50px")
                           )          
                         ) , style = list('display' = "table-row", "margin-top" = "1px", 'float' = "left") 
                         ) 
@@ -320,7 +335,7 @@ app$callback(
   params=list(input(id = 'drugs_dd', property='value')),
   
   function(drug_input) {
-    result <- ggplotly(set_graph_race(drug = drug_input) ,width = 500, height = 300)
+    result <- ggplotly(set_graph_race(drug = drug_input) ,width = 400, height = 300)
     
     return(result)
   })
@@ -331,7 +346,7 @@ app$callback(
   params=list(input(id = 'drugs_dd', property='value')),
   
   function(drug_input) {
-    result <- ggplotly(set_graph_gender(drug = drug_input) ,width = 500, height = 300)
+    result <- ggplotly(set_graph_gender(drug = drug_input) ,width = 400, height = 300)
     
     return(result)
   })
@@ -342,7 +357,7 @@ app$callback(
   params=list(input(id = 'drugs_dd', property='value')),
   
   function(drug_input) {
-    result <- ggplotly(set_graph_age(drug = drug_input) ,width = 500, height = 300)
+    result <- ggplotly(set_graph_age(drug = drug_input) ,width = 400, height = 300)
     
     return(result)
   })
