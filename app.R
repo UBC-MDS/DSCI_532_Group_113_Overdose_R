@@ -124,7 +124,7 @@ drugs_heatmap <- combination_count %>%
 ggplot(aes(index, second_drug, text = paste('First Drug:', index, '<br>Second Drug: ', second_drug))) +
   geom_tile(aes(fill = Count)) +
   geom_text(aes(label = round(Count, 1)), color = 'white', size = 3) +
-  labs(x = "First drug", y = "Second drug") +
+  labs(title = "Count of overdose victims with a combination of 2 drugs", x = "First drug", y = "Second drug") +
   scale_fill_viridis() +
   theme_minimal() +
   theme(
@@ -207,7 +207,7 @@ app$layout(
                   children = list(paste0(
                     "How drug overdose is stealing lives from us!"
                   )), 
-                  href = "https://github.com/dataubc/DSCI_532_Group_113_Overdose_R",
+                  href = "https://github.com/UBC-MDS/DSCI_532_Group_113_Overdose_R",
                   style = list(color = "white",'margin-left' = "10px","font-size" = "20px"),
                   
                   htmlImg(
@@ -226,7 +226,7 @@ app$layout(
               children = list(htmlH5(paste0(
                                 "Overdose app allows you to visualize ",
                                 "different factors associated with ",
-                                "accidental death by overdose"
+                                "accidental death by overdose in Connecticut, US, from 2012 - 2018"
                               )
                               ))),
             
@@ -244,6 +244,9 @@ app$layout(
               list(
                 dccTabs(id="tabs", children = list(
                   dccTab(label = 'The Killer', children =list(
+                    htmlDiv(list( 
+                      htmlP("This section, named 'the killers', focuses on the effect of drugs. Two static graphs are displayed; one is the prevalence ranking of drugs found in the deceased people. Another one is the correlation map of two drugs from this dataset, which counts and compares the occurrences of two-drug combinations in the deaths."
+                    )), style = list("margin-left" = "300px", "margin-right" = "300px", "font-size"= "16px")),
                     htmlDiv(list(
                       dccGraph(
                         id='vic-drugs',
@@ -262,6 +265,7 @@ app$layout(
                   ),
                   dccTab(label = 'The Victims', children = list(
                     htmlDiv(list(
+                      htmlP("Please select one drug to see the affected demographic group by age, race and gender"),
                       DrugsDD,
                       htmlImg(
                         id='drug_img',
@@ -283,7 +287,7 @@ app$layout(
                         htmlDiv(list(
                           dccGraph(
                             id='vic-age_0',
-                            figure = ggplotly(set_graph_age(), width = 400, height = 300)
+                            figure = ggplotly(set_graph_age(), width = 700, height = 300)
                           )
                         ), style = list('display' = "table-row", "margin-bottom" = "1px") 
                         ),
@@ -310,10 +314,14 @@ app$layout(
                     )
                   )
                   )
-                )   
+                ), style = list("font-size"= "16px", "font-weight" = "bold")   
                 )
               )
-            )
+            ), 
+              htmlDiv(style = list('margin-left' = "10px"),
+                    children = list(
+                      htmlA(children = "Data retrieved from the data.ct.gov", href = "https://catalog.data.gov/dataset/accidental-drug-related-deaths-january-2012-sept-2015"
+                      )))
           ), style = list('background-color' = "#ffffff")
   )
 )
