@@ -1,6 +1,6 @@
 # Reflection
 
-## visualization interactivity 
+## Visualization Interactivity 
 
 Overdash is a visualization app that is designed to provide insights into the rising deaths by accidental overdose in Connecticut from 2012 to 2019. It assists health professional, law enforcement professionals and policymaker by providing a visual representation of this crisis. This is the R version of the app. 
 
